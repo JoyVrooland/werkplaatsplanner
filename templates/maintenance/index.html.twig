@@ -9,11 +9,11 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Discription</th>
-                <th>Duration</th>
-                <th>Price</th>
-                <th>actions</th>
+                <th>Titel</th>
+                <th>Beschrijving</th>
+                <th>Tijdsduur</th>
+                <th>Prijs</th>
+                <th>Actie</th>
             </tr>
         </thead>
         <tbody>
@@ -25,17 +25,18 @@
                 <td>{{ maintenance.duration }}</td>
                 <td>{{ maintenance.price }}</td>
                 <td>
-                    <a href="{{ path('maintenance_show', {'id': maintenance.id}) }}">show</a>
-                    <a href="{{ path('maintenance_edit', {'id': maintenance.id}) }}">edit</a>
+                    <a href="{{ path('maintenance_show', {'id': maintenance.id}) }}">Bekijken</a>
+                    -
+                    <a href="{{ path('maintenance_edit', {'id': maintenance.id}) }}">Bijwerken</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">geen record gevonden</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('maintenance_new') }}">Create new</a>
+    <a href="{{ path('maintenance_new') }}">Nieuw toevoegen</a>
 {% endblock %}
