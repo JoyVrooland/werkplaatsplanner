@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MaintenanceRepository")
@@ -18,11 +19,19 @@ class Maintenance
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\Length(
+     *      min = 3,
+     *      minMessage = "Je Titel moet tenminste {{ limit }} lang zijn!"
+     * )
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(
+     *      min = 20,
+     *      minMessage = "Je Beschrijving moet tenminste {{ limit }} lang zijn!"
+     * )
      */
     private $discription;
 

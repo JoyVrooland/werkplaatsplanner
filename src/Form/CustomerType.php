@@ -21,7 +21,7 @@ class CustomerType extends AbstractType
             ->add('post_code',TextType::class, array('label' => 'Post code') )
             ->add('city',TextType::class, array('label' => 'Woonplaats') )
             ->add('phone',TextType::class, array('label' => 'Telefoonnummer') )
-            ->add('email')
+            ->add('email',TextType::class, array('label' => 'Email') )
         ;
     }
 
